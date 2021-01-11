@@ -1,5 +1,5 @@
 package DAO;
 
-public class TerminDAO extends AbstractDAO{
+public class TerminDAO extends AbstractDAO {
     // to be implemented
 }

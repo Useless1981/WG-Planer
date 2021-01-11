@@ -88,4 +88,4 @@ public class Aufgabe {
     public boolean getAufgabenErledigt() {
         return this.aufgabeErledigt;
     }
- }
+}
