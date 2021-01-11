@@ -1,6 +1,6 @@
 package DAO;
 
-public abstract class AbstractDAO<T> {
+public abstract class AbstractDAO<T> implements ConnectionSource {
 
 
     public <T> T save(T entity) {
