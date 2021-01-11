@@ -4,7 +4,7 @@ public abstract class AbstractDAO<T> {
 
 
     public <T> T save(T entity) {
-
+        return null; //Platzhalter
     }
 
     public <T> void update(T entity) {
@@ -12,7 +12,7 @@ public abstract class AbstractDAO<T> {
     }
 
     public <T> T getByID(long ID) {
-
+        return null; //Platzhalter
     }
 
     public <T> void delete(T entity) {
