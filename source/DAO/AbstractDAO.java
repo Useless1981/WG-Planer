@@ -1,5 +1,7 @@
 package DAO;
 
+import java.sql.Statement;
+
 public abstract class AbstractDAO<T> implements ConnectionSource {
 
 
@@ -8,7 +10,6 @@ public abstract class AbstractDAO<T> implements ConnectionSource {
     }
 
     public <T> void update(T entity) {
-
     }
 
     public <T> T getByID(long ID) {
