@@ -4,8 +4,8 @@ import java.sql.*;
 
 public interface ConnectionSource {
 
-    public static void main(String[] args) {
-//    Datenbank oeffnen/Verbindung aufbauen; Protokoll//Server:Port/NameDerDatenbank
+    static void main(String[] args) {
+//    Datenbank oeffnen/Verbindung aufbauen; "Protokoll//Host:Port/BezDerDatenbank"
         String url = "jdbc:mysql://localhost:3307/schema_wg-planner";
         String user = "root";
         String password = "";
