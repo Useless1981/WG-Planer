@@ -7,6 +7,7 @@ public class WG {
     private int wgID;
     private String wgName;
     private List<Integer> wgMitglieder = new LinkedList<>();
+    private List<Aufgabe> aufgaben = new LinkedList<>();
 
     public WG(int ID, String name, List<Integer> mitglieder) {
         this.wgID = ID;
@@ -45,5 +46,17 @@ public class WG {
 
     public List<Integer> getMitglieder() {
         return this.wgMitglieder;
+    }
+
+    public void aufgabeHinzufuegen(Aufgabe aufgabe) {
+        aufgaben.add(aufgabe);
+    }
+
+    public void aufgabeEntfernen(Aufgabe aufgabe) {
+        aufgaben.remove(aufgabe);
+    }
+
+    public List<Aufgabe> getAufgaben() {
+        return aufgaben;
     }
 }
