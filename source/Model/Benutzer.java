@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Benutzer {
 
     private int benutzerID;
@@ -10,6 +13,7 @@ public class Benutzer {
     private boolean angemeldet;
     private WG wgName;
     private int karmapunkte;
+    private List<ErledigteAufgabe> erledigteAufgabeList = new LinkedList<>();
 
     public Benutzer(int id, String firstName, String lastName, String email, String password, boolean loggedIn, WG wgName, int points) {
         this.benutzerID = id;
@@ -22,12 +26,17 @@ public class Benutzer {
         this.karmapunkte = points;
     }
 
-    public void anmelden() {
-        // To be implemented
+    public boolean anmelden(String passwort) {
+        if(passwort.equals(this.passwort)) {
+            this.angemeldet = true;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void abmelden() {
-        // To be implemented
+        this.angemeldet = false;
     }
 
     public void loeschen() {
@@ -91,10 +100,20 @@ public class Benutzer {
     }
 
     public int getKarmapunkte() {
-        return karmapunkte;
+        return this.karmapunkte;
     }
 
     public void setKarmapunkte(int points) {
         this.karmapunkte = points;
+    }
+
+    public void karmapunkteVerbuchen(Aufgabe aufgabe)  {
+        ErledigteAufgabe erledigteAufgabe = aufgabe.aufgabeErledigt();
+        this.erledigteAufgabeList.add(erledigteAufgabe);
+        this.karmapunkte += erledigteAufgabe.getPunkte();
+    }
+
+    public boolean checkKarmeScore() {
+        return this.erledigteAufgabeList.stream().map(ErledigteAufgabe::getPunkte).reduce(0, Integer::sum) == this.karmapunkte;
     }
 }

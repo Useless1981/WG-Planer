@@ -6,7 +6,7 @@ public interface ConnectionSource {
 
     static void main(String[] args) {
 //    Datenbank oeffnen/Verbindung aufbauen; "Protokoll//Host:Port/BezDerDatenbank"
-        String url = "jdbc:mysql://localhost:3307/schema_wg-planner";
+        String url = "jdbc:mysql://localhost:3306/schema_wg-planner";
         String user = "root";
         String password = "";
 

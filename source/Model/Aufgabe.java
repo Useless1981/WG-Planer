@@ -6,20 +6,27 @@ public class Aufgabe {
 
     private int aufgabeID;
     private String bezeichnung;
-    private Date aufgabeTermin;
+    private Termin aufgabeTermin;
     private boolean aufgabeErledigt;
-    private int terminWiederholung;
     private int karmapunkte;
     private boolean zugeordneteAufgaben;
     private Benutzer benutzer;
 
 
-    public Aufgabe(int ID, String bezeichnung, Date date, boolean erledigt, int wiederholen, int punkte, boolean zugeordnet, Benutzer benutzer) {
+    public Aufgabe(int ID, String bezeichnung, Termin termin, boolean erledigt, int wiederholen, int punkte, boolean zugeordnet, Benutzer benutzer) {
         this.aufgabeID = ID;
         this.bezeichnung = bezeichnung;
-        this.aufgabeTermin = date;
+        this.aufgabeTermin = termin;
         this.aufgabeErledigt = erledigt;
-        this.terminWiederholung = wiederholen;
+        this.karmapunkte = punkte;
+        this.zugeordneteAufgaben = zugeordnet;
+        this.benutzer = benutzer;
+    }
+
+    public Aufgabe(int ID, String bezeichnung, boolean erledigt, int wiederholen, int punkte, boolean zugeordnet, Benutzer benutzer) {
+        this.aufgabeID = ID;
+        this.bezeichnung = bezeichnung;
+        this.aufgabeErledigt = erledigt;
         this.karmapunkte = punkte;
         this.zugeordneteAufgaben = zugeordnet;
         this.benutzer = benutzer;
@@ -33,21 +40,15 @@ public class Aufgabe {
         this.bezeichnung = bezeichnung;
     }
 
-    public void setTerminWiederholung(int wiederholen) {
-        this.terminWiederholung = wiederholen;
-    }
-
-    public void setAufgabeTermin(Date date) {
-        this.aufgabeTermin = date;
+    public void setAufgabeTermin(Termin termin) {
+        this.aufgabeTermin = termin;
     }
 
     public void setKarmapunkte(int punkte) {
         this.karmapunkte = punkte;
     }
 
-    public void setZugeordneteAufgaben(boolean zugeordnet) {
-        this.zugeordneteAufgaben = zugeordnet;
-    }
+    public void setZugeordneteAufgaben(boolean zugeordnet) { this.zugeordneteAufgaben = zugeordnet; }
 
     public void setBenutzer(Benutzer benutzer) {
         this.benutzer = benutzer;
@@ -65,11 +66,7 @@ public class Aufgabe {
         return this.bezeichnung;
     }
 
-    public int getTerminWiederholung() {
-        return this.terminWiederholung;
-    }
-
-    public Date getAufgabeTermin() {
+    public Termin getAufgabeTermin() {
         return this.aufgabeTermin;
     }
 
@@ -88,4 +85,6 @@ public class Aufgabe {
     public boolean getAufgabenErledigt() {
         return this.aufgabeErledigt;
     }
+
+    public ErledigteAufgabe aufgabeErledigt() { return new ErledigteAufgabe(this.bezeichnung, this.karmapunkte, new Date()); }
 }
