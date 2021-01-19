@@ -1,7 +1,5 @@
 package Model;
 
-import java.util.Date;
-
 public class Aufgabe {
 
     private int aufgabeID;
@@ -86,5 +84,5 @@ public class Aufgabe {
         return this.aufgabeErledigt;
     }
 
-    public ErledigteAufgabe aufgabeErledigt() { return new ErledigteAufgabe(this.bezeichnung, this.karmapunkte, new Date()); }
+    public ErledigteAufgabe aufgabeErledigt() { return new ErledigteAufgabe(this.bezeichnung, this.karmapunkte); }
 }

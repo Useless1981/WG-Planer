@@ -3,37 +3,35 @@ package Model;
 import java.util.LinkedList;
 import java.util.List;
 
+
+/**
+ * This class is a representation of a WG. It has an ID, a Name and stores all Mitglieder and Aufgaben associated with this WG.
+ */
 public class WG {
     private int wgID;
     private String wgName;
-    private List<Integer> wgMitglieder = new LinkedList<>();
-    private List<Aufgabe> aufgaben = new LinkedList<>();
+    private List<Integer> wgMitglieder;
+    private List<Aufgabe> aufgaben;
 
-    public WG(int ID, String name, List<Integer> mitglieder) {
+    // Constructor for Existing WG
+    public WG(int ID, String name, List<Integer> mitglieder, List<Aufgabe> aufgaben) {
         this.wgID = ID;
         this.wgName = name;
         this.wgMitglieder = mitglieder;
+        this.aufgaben = aufgaben;
     }
 
+    //Constructor for new WG
     public WG(int ID, String name) {
         this.wgID = ID;
         this.wgName = name;
+        this.wgMitglieder = new LinkedList<>();
+        this.aufgaben = new LinkedList<>();
     }
 
-    public void wgMitgliedHinzufuegen(int benutzerID) {
-        this.wgMitglieder.add(benutzerID);
-    }
-
-    public void wgMitgliedLoeschen(int benutzerID) {
-        this.wgMitglieder.remove(benutzerID);
-    }
-
-    public void setID(int ID) {
-        this.wgID = ID;
-    }
-
-    public void setName(String name) {
-        this.wgName = name;
+    // Getter
+    public List<Aufgabe> getAufgaben() {
+        return aufgaben;
     }
 
     public int getID() {
@@ -48,6 +46,16 @@ public class WG {
         return this.wgMitglieder;
     }
 
+    // Setter
+    public void setID(int ID) {
+        this.wgID = ID;
+    }
+
+    public void setName(String name) {
+        this.wgName = name;
+    }
+
+    // Add and remove Aufgaben and Mitglieder
     public void aufgabeHinzufuegen(Aufgabe aufgabe) {
         aufgaben.add(aufgabe);
     }
@@ -56,7 +64,13 @@ public class WG {
         aufgaben.remove(aufgabe);
     }
 
-    public List<Aufgabe> getAufgaben() {
-        return aufgaben;
+    public void wgMitgliedHinzufuegen(int benutzerID) {
+        this.wgMitglieder.add(benutzerID);
     }
+
+    public void wgMitgliedLoeschen(int benutzerID) {
+        this.wgMitglieder.remove(benutzerID);
+    }
+
+
 }
