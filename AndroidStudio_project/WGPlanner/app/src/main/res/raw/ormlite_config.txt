@@ -1,0 +1,17 @@
+#
+# generated on 2021/01/19 02:07:20
+#
+# --table-start--
+dataClass=com.example.wg_planner.task
+tableName=t_notes
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=beschreibung
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
