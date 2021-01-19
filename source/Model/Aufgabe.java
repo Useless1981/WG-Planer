@@ -1,11 +1,14 @@
 package Model;
 
+
+/**
+ * This class is a representation of a single Aufageb. It has an ID, a Name, may have an associated Termin
+ */
 public class Aufgabe {
 
     private int aufgabeID;
     private String bezeichnung;
     private Termin aufgabeTermin;
-    private boolean aufgabeErledigt;
     private int karmapunkte;
     private boolean zugeordneteAufgaben;
     private Benutzer benutzer;
@@ -15,7 +18,6 @@ public class Aufgabe {
         this.aufgabeID = ID;
         this.bezeichnung = bezeichnung;
         this.aufgabeTermin = termin;
-        this.aufgabeErledigt = erledigt;
         this.karmapunkte = punkte;
         this.zugeordneteAufgaben = zugeordnet;
         this.benutzer = benutzer;
@@ -24,7 +26,6 @@ public class Aufgabe {
     public Aufgabe(int ID, String bezeichnung, boolean erledigt, int wiederholen, int punkte, boolean zugeordnet, Benutzer benutzer) {
         this.aufgabeID = ID;
         this.bezeichnung = bezeichnung;
-        this.aufgabeErledigt = erledigt;
         this.karmapunkte = punkte;
         this.zugeordneteAufgaben = zugeordnet;
         this.benutzer = benutzer;
