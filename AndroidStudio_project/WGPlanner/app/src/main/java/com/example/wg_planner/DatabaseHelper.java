@@ -18,8 +18,8 @@ import com.j256.ormlite.table.TableUtils;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     //database name
-    private static final String DATABASE_NAME = "test"; // Hier Namen der DB eintragen
-    private static final int DATABASE_VERSION = 8; // 1 increment, DB wird gelooescht und neu aufgesetzt
+    private static final String DATABASE_NAME = "WGPlanner_db"; // Hier Namen der DB eintragen
+    private static final int DATABASE_VERSION = 10; // 1 increment, DB wird gelooescht und neu aufgesetzt
 
     // the DAO object we use to access the Note table
     private Dao<task, Integer> noteDao = null;
